@@ -6,20 +6,20 @@ import { sample } from '../../utils';
 import { WORDS } from '../../data';
 
 const answer = sample(WORDS);
-console.info({ answer });
+console.log({ answer });
 
 function Game() {
-  const [guessResults, setGuessResults] = React.useState([]);
+  const [guesses, setGuesses] = React.useState([]);
 
   function addGuessResult(guess) {
-    console.info({ guess });
+    console.log({ guess });
     const indexedGuess = { name: guess, index: crypto.randomUUID() };
-    setGuessResults([...guessResults, indexedGuess]);
+    setGuesses([...guesses, indexedGuess]);
   }
 
   return (
     <>
-      <GuessResults guesses={guessResults} />
+      <GuessResults guesses={guesses} />
       <GuessInput addGuessResult={addGuessResult} />
     </>
   );
