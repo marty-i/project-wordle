@@ -13,8 +13,7 @@ function Game() {
 
   function addGuessResult(guess) {
     console.log({ guess });
-    const indexedGuess = { name: guess, index: crypto.randomUUID() };
-    setGuesses([...guesses, indexedGuess]);
+    setGuesses([...guesses, guess]);
   }
 
   return (
